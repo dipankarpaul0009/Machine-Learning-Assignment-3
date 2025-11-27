@@ -1,6 +1,6 @@
 # Machine-Learning-Assignment-3
 
-Decision Tree Classification on the Iris Dataset
+# Decision Tree Classification on the Iris Dataset
 
 This project demonstrates how to build, train, visualize, and evaluate a Decision Tree Classifier using the classic Iris dataset.
 The assignment includes data loading, preprocessing, model training, visualization using graphviz, and performance evaluation.
@@ -43,31 +43,31 @@ from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 import graphviz
 
-#2. Loading the Iris Dataset
+# 2. Loading the Iris Dataset
 iris = load_iris()
 X = iris.data
 y = iris.target
 
-#3. Splitting the Dataset
+# 3. Splitting the Dataset
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-#4. Training the Decision Tree
+# 4. Training the Decision Tree
 clf = DecisionTreeClassifier()
 clf.fit(X_train, y_train)
 
-#5. Making Predictions & Evaluating
+# 5. Making Predictions & Evaluating
 y_pred = clf.predict(X_test)
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
-#6. Visualizing the Tree (Matplotlib)
+# 6. Visualizing the Tree (Matplotlib)
 plt.figure(figsize=(12, 8))
 plot_tree(clf, filled=True, feature_names=iris.feature_names, class_names=iris.target_names)
 plt.show()
 
-#7. Exporting as Graphviz File
+# 7. Exporting as Graphviz File
 dot_data = export_graphviz(
     clf,
     out_file=None,
@@ -80,13 +80,13 @@ dot_data = export_graphviz(
 graph = graphviz.Source(dot_data)
 graph.render("iris_decision_tree")
 
-#Results
+# Results
 
 Achieves high accuracy (typically 95%–100%)
 
 Provides clear visualization of decision boundaries
 
-Classification report includes:
+# Classification report includes:
 
 Precision
 
@@ -94,7 +94,7 @@ Recall
 
 F1-score
 
-#Learning Outcomes
+# Learning Outcomes
 
 Understanding Decision Tree algorithms
 
@@ -106,12 +106,12 @@ Working with SciKit-Learn’s built-in datasets
 
 Plotting and exporting decision trees
 
-#File Structure
-├── Decision-Tree.ipynb     # Jupyter notebook with full analysis
-├── iris_decision_tree.pdf  # Exported decision tree (if generated)
-├── README.md               # Project documentation
+# File Structure
+├── Decision-Tree.ipynb     #  Jupyter notebook with full analysis
+├── iris_decision_tree.pdf  #  Exported decision tree (if generated)
+├── README.md               #  Project documentation
 
-Submitted by,
+# Submitted by,
 
 Name :- Dipankar Paul
 subject :- Machine Learning 
